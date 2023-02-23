@@ -15,17 +15,39 @@ import {
   ProfileScreen,
   SettingsScreen,
 } from './screens';
+import {Home, Latest, Popular, Profile, Settings} from './assets/icons';
+
 const Tab = createBottomTabNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
       <Tab.Navigator>
-        <Tab.Screen name="Home" component={HomeScreen} />
-        <Tab.Screen name="Most Popular" component={PopularScreen} />
-        <Tab.Screen name="Latest" component={LatestScreen} />
-        <Tab.Screen name="Profile" component={ProfileScreen} />
-        <Tab.Screen name="Settings" component={SettingsScreen} />
+        <Tab.Screen
+          name="Home"
+          component={HomeScreen}
+          options={{tabBarIcon: Home}}
+        />
+        <Tab.Screen
+          name="Most Popular"
+          component={PopularScreen}
+          options={{tabBarIcon: Popular}}
+        />
+        <Tab.Screen
+          name="Latest"
+          component={LatestScreen}
+          options={{tabBarIcon: Latest}}
+        />
+        <Tab.Screen
+          name="Profile"
+          component={ProfileScreen}
+          options={{tabBarIcon: Profile}}
+        />
+        <Tab.Screen
+          name="Settings"
+          component={SettingsScreen}
+          options={{tabBarIcon: Settings}}
+        />
       </Tab.Navigator>
     </NavigationContainer>
   );
