@@ -6,6 +6,7 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios --port 8888",
     "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "start": "react-native start",
     "test": "jest"
   },

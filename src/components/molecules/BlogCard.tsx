@@ -1,5 +1,4 @@
-import React from 'react';
-import {StyleSheet, View, Text, Image, ImageSourcePropType} from 'react-native';
+import { StyleSheet, View, Text, Image, ImageSourcePropType } from 'react-native';
 import BlogCardSubtitleText from '../atoms/BlogCardSubtitleText';
 
 interface CardProps {
@@ -8,7 +7,7 @@ interface CardProps {
   image: ImageSourcePropType;
 }
 
-const Card: React.FC<CardProps> = ({title, description, image}) => {
+const Card: React.FC<CardProps> = ({ title, description, image }) => {
   return (
     <View style={styles.card}>
       <Image source={image} style={styles.image} />
