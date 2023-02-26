@@ -1,10 +1,9 @@
 import React from 'react';
 import {View, Text} from 'react-native';
-import IconStyling from '../styles/Icons';
 
 const ProfileScreen = (): JSX.Element => {
   return (
-    <View style={IconStyling}>
+    <View>
       <Text>Profile!</Text>
     </View>
   );
