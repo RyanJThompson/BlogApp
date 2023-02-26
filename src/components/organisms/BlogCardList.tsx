@@ -11,8 +11,9 @@ interface DataItem {
 const data: DataItem[] = [
   {
     id: 1,
-    title: 'Covid 19 bla bla title',
-    description: 'Covid 19 is less impacting europe and how is the eceonomy changing?',
+    title: 'The Importance of Vaccines in the Fight Against COVID-19',
+    description:
+      'As the COVID-19 pandemic continues to affect communities around the world, vaccines have emerged as a crucial tool in the fight against the virus. Vaccines have been shown to significantly reduce the risk of severe illness, hospitalization, and death from COVID-19. Additionally, widespread vaccination can help slow the spread of the virus and protect vulnerable populations. Despite some misinformation and hesitancy around vaccines, public health experts agree that vaccination is a critical step in ending the pandemic and returning to normalcy.',
     image: {
       uri: 'https://cdn.who.int/media/images/default-source/mca/mca-covid-19/coronavirus-2.tmb-479v.jpg?sfvrsn=4dba955c_12%20479w',
     },
