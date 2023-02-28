@@ -1,18 +1,20 @@
 import { StyleSheet, View, Text, Image, ImageSourcePropType } from 'react-native';
+import { BlogCardAuthorText } from '../atoms';
 import BlogCardSubtitleText from '../atoms/BlogCardSubtitleText';
 
-interface CardProps {
+interface BlogCardProps {
   title: string;
   description: string;
   image: ImageSourcePropType;
 }
 
-const Card: React.FC<CardProps> = ({ title, description, image }) => {
+const BlogCard: React.FC<BlogCardProps> = ({ title, description, image }) => {
   return (
     <View style={styles.card}>
+      <BlogCardAuthorText text={'Ryan Thompson'} style={styles.authorHeading} />
       <Image source={image} style={styles.image} />
       <Text style={styles.title}>{title}</Text>
-      <BlogCardSubtitleText style={styles.description} text={description} />
+      <BlogCardSubtitleText text={description} style={styles.description} />
     </View>
   );
 };
@@ -51,6 +53,11 @@ const styles = StyleSheet.create({
     fontSize: 14,
     marginTop: 10,
   },
+  authorHeading: {
+    fontWeight: 'normal',
+    fontSize: 14,
+    paddingBottom: 10,
+  },
 });
 
-export default Card;
+export default BlogCard;
