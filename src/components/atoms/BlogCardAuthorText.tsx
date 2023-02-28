@@ -12,7 +12,7 @@ export default BlogCardAuthorText;
 
 const styles = StyleSheet.create({
   authorHeading: {
-    fontWeight: 'normal',
+    fontWeight: 'bold',
     fontSize: 14,
     paddingBottom: 10,
   },
