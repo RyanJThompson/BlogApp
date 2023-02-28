@@ -11,10 +11,10 @@ interface BlogCardProps {
 const BlogCard: React.FC<BlogCardProps> = ({ title, description, image }) => {
   return (
     <View style={styles.card}>
-      <BlogCardAuthorText text={'Ryan Thompson'} style={styles.authorHeading} />
+      <BlogCardAuthorText text={'Ryan Thompson'} />
       <Image source={image} style={styles.image} />
       <Text style={styles.title}>{title}</Text>
-      <BlogCardSubtitleText text={description} style={styles.description} />
+      <BlogCardSubtitleText text={description} />
     </View>
   );
 };
@@ -47,16 +47,6 @@ const styles = StyleSheet.create({
     borderBottomRightRadius: 8,
     resizeMode: 'cover',
     marginBottom: 5,
-  },
-  description: {
-    fontWeight: 'normal',
-    fontSize: 14,
-    marginTop: 10,
-  },
-  authorHeading: {
-    fontWeight: 'normal',
-    fontSize: 14,
-    paddingBottom: 10,
   },
 });
 
