@@ -10,7 +10,7 @@ interface DataItem {
 }
 
 const mockData: DataItem[] = [];
-const MockBlogCardElement = (numOfTimes: number) => {
+const MockBlogCardElementData = (numOfTimes: number) => {
   for (let i = 0; i < numOfTimes; i++) {
     mockData[i] = {
       id: i + 1,
@@ -35,7 +35,7 @@ const renderItem = () => {
 
 describe('Unit - Organisms: BlogCardList', () => {
   it('SHOULD render the Blog Card List with the correct values', () => {
-    MockBlogCardElement(3);
+    MockBlogCardElementData(3);
     const { getByTestId } = render(
       <FlatList
         data={mockData}
