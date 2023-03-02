@@ -1,5 +1,5 @@
 import { FlatList, ImageURISource, StyleSheet } from 'react-native';
-import BlogCard from '../molecules/BlogCard';
+import BlogCard from '../molecules/BlogCard/BlogCard';
 
 interface DataItem {
   id: number;
