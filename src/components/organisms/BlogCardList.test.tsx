@@ -28,7 +28,7 @@ const MockBlogCardElement = () => {
   );
 };
 
-describe('Unit - Organsims: BlogCardList', () => {
+describe('Unit - Organisms: BlogCardList', () => {
   it('SHOULD render the Blog Card List with the correct values', () => {
     [2].forEach(() => {
       MockBlogCardElement();
