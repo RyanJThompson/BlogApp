@@ -9,6 +9,9 @@ interface DataItem {
   image: ImageURISource;
 }
 
+/*  Each time MockBlogCardElement() is called it will create a new member of the mockData
+    array and when used as a render item prop it will render the BlogCard n number
+    of times where n = the length of the mockData array */
 const mockData: DataItem[] = [];
 let index = -1;
 const MockBlogCardElement = () => {
