@@ -1,5 +1,6 @@
-import { FlatList, ImageURISource, StyleSheet } from 'react-native';
+import { FlatList, ImageURISource } from 'react-native';
 import BlogCard from '../molecules/BlogCard/BlogCard';
+import createStyles from './BlogCardList.styles';
 
 interface DataItem {
   id: number;
@@ -7,6 +8,8 @@ interface DataItem {
   description: string;
   image: ImageURISource;
 }
+
+const styles = createStyles();
 
 const data: DataItem[] = [
   {
@@ -48,12 +51,5 @@ const BlogCardList: React.FC = () => {
     <FlatList data={data} renderItem={renderItem} keyExtractor={item => item.id.toString()} style={styles.flatList} />
   );
 };
-
-const styles = StyleSheet.create({
-  flatList: {
-    flex: 1,
-    padding: 20,
-  },
-});
 
 export default BlogCardList;

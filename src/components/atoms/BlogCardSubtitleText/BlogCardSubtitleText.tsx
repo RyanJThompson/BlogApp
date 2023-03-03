@@ -1,9 +1,12 @@
-import { StyleSheet, Text } from 'react-native';
+import { Text } from 'react-native';
+import createStyles from './BlogCardSubtitleText.styles';
 
 interface BlogCardSubtitleTextProps {
   text: string;
   testID?: string;
 }
+
+const styles = createStyles();
 
 const BlogCardSubtitleText: React.FC<BlogCardSubtitleTextProps> = ({ text, testID }) => {
   const shortenText = (): string => {
@@ -18,11 +21,3 @@ const BlogCardSubtitleText: React.FC<BlogCardSubtitleTextProps> = ({ text, testI
 };
 
 export default BlogCardSubtitleText;
-
-const styles = StyleSheet.create({
-  subtitleText: {
-    fontWeight: 'normal',
-    fontSize: 14,
-    marginTop: 10,
-  },
-});
