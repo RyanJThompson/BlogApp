@@ -9,7 +9,7 @@ import App from '../src/App';
 import renderer from 'react-test-renderer';
 
 jest.useFakeTimers();
-
+// TODO: Fix firebase causing app test to fail
 it('renders correctly', () => {
   renderer.create(<App />);
 });
