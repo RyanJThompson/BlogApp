@@ -12,9 +12,13 @@ interface DataItem {
   image: ImageURISource;
 }
 
+interface BlogCardListProps {
+  testID?: string;
+}
+
 const styles = createStyles();
 
-const BlogCardList: React.FC = () => {
+const BlogCardList: React.FC<BlogCardListProps> = ({ testID }) => {
   const [blogs, setBlogs] = useState<DataItem[]>();
 
   useEffect(() => {
@@ -37,7 +41,13 @@ const BlogCardList: React.FC = () => {
   );
 
   return (
-    <FlatList data={blogs} renderItem={renderItem} keyExtractor={item => item.id.toString()} style={styles.flatList} />
+    <FlatList
+      data={blogs}
+      renderItem={renderItem}
+      keyExtractor={item => item.id.toString()}
+      style={styles.flatList}
+      testID={testID}
+    />
   );
 };
 

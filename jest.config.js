@@ -5,7 +5,10 @@ module.exports = {
       '<rootDir>/assetsTransformer.js',
     '\\.(css|less)$': '<rootDir>/assetsTransformer.js',
   },
-  setupFiles: ['./node_modules/react-native-gesture-handler/jestSetup.js'],
+  setupFiles: [
+    './node_modules/react-native-gesture-handler/jestSetup.js',
+    './__mocks__/@react-native-firebase/database.ts',
+  ],
   transformIgnorePatterns: ['node_modules/(?!(@react-native|react-native|react-native-vector-icons|native-base)/)'],
   testPathIgnorePatterns: ['./ios'],
 };
