@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import { FlatList, ImageURISource } from 'react-native';
-import { firebaseDBRef } from '../../api/firebase/realtimeDatabaseConfig';
 import BlogCard from '../molecules/BlogCard/BlogCard';
 import createStyles from './BlogCardList.styles';
+import { FIREBASE_DB_URL } from '@env';
+import { firebase } from '@react-native-firebase/database';
 
 interface DataItem {
   id: number;
@@ -18,7 +19,7 @@ const BlogCardList: React.FC = () => {
 
   useEffect(() => {
     const getBlogs = async (): Promise<void> => {
-      const snapshot = await firebaseDBRef.ref('/Blogs').once('value');
+      const snapshot = await firebase.app().database(FIREBASE_DB_URL).ref('/Blogs').once('value');
       const blogsData: DataItem[] = snapshot.val();
       const formattedBlogs = blogsData.map((item, index) => ({
         id: index,
