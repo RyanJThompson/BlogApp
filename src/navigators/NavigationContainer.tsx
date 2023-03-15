@@ -14,11 +14,27 @@ const NavigationContainer: React.FC = () => {
   return (
     <RN_NavigationContainer>
       <Tab.Navigator>
-        <Tab.Screen name="Home" component={HomeScreenNavigator} options={{ tabBarIcon: Home }} />
-        <Tab.Screen name="Most Popular" component={PopularScreenNavigator} options={{ tabBarIcon: Popular }} />
-        <Tab.Screen name="Latest" component={LatestScreenNavigator} options={{ tabBarIcon: Latest }} />
-        <Tab.Screen name="Profile" component={ProfileScreenNavigator} options={{ tabBarIcon: Profile }} />
-        <Tab.Screen name="Settings" component={SettingsScreenNavigator} options={{ tabBarIcon: Settings }} />
+        <Tab.Screen name="Tab Home" component={HomeScreenNavigator} options={{ tabBarIcon: Home, title: 'Home' }} />
+        <Tab.Screen
+          name="Tab Most Popular"
+          component={PopularScreenNavigator}
+          options={{ tabBarIcon: Popular, title: 'Most Popular' }}
+        />
+        <Tab.Screen
+          name="Tab Latest"
+          component={LatestScreenNavigator}
+          options={{ tabBarIcon: Latest, title: 'Latest' }}
+        />
+        <Tab.Screen
+          name="Tab Profile"
+          component={ProfileScreenNavigator}
+          options={{ tabBarIcon: Profile, title: 'Profile' }}
+        />
+        <Tab.Screen
+          name="Tab Settings"
+          component={SettingsScreenNavigator}
+          options={{ tabBarIcon: Settings, title: 'Settings' }}
+        />
       </Tab.Navigator>
     </RN_NavigationContainer>
   );
