@@ -1,4 +1,4 @@
-// Mock the Firebase realtime database module
+// Mocks the Firebase realtime database module
 export default jest.mock('@react-native-firebase/database', () => ({
   firebase: {
     app: jest.fn(() => ({
