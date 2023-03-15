@@ -13,7 +13,7 @@ const NavigationContainer: React.FC = () => {
   const Tab = createBottomTabNavigator();
   return (
     <RN_NavigationContainer>
-      <Tab.Navigator>
+      <Tab.Navigator screenOptions={{ headerShown: false }}>
         <Tab.Screen name="Tab Home" component={HomeScreenNavigator} options={{ tabBarIcon: Home, title: 'Home' }} />
         <Tab.Screen
           name="Tab Most Popular"

@@ -5,8 +5,8 @@ const Stack = createStackNavigator();
 
 const PopularScreenNavigator = () => {
   return (
-    <Stack.Navigator screenOptions={{ headerShown: false }}>
-      <Stack.Screen name="Popular Stack" component={PopularScreen} />
+    <Stack.Navigator screenOptions={{ headerShown: true }}>
+      <Stack.Screen name="Popular" component={PopularScreen} />
     </Stack.Navigator>
   );
 };

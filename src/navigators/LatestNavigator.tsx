@@ -5,8 +5,8 @@ const Stack = createStackNavigator();
 
 const LatestScreenNavigator = () => {
   return (
-    <Stack.Navigator screenOptions={{ headerShown: false }}>
-      <Stack.Screen name="Latest Stack" component={LatestScreen} />
+    <Stack.Navigator screenOptions={{ headerShown: true }}>
+      <Stack.Screen name="Latest" component={LatestScreen} />
     </Stack.Navigator>
   );
 };
