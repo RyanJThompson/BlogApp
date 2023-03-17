@@ -10,6 +10,7 @@ interface DataItem {
   title: string;
   description: string;
   image: ImageURISource;
+  author: string;
 }
 
 interface BlogCardListProps {
@@ -30,6 +31,7 @@ const BlogCardList: React.FC<BlogCardListProps> = ({ testID }) => {
         title: item.title,
         description: item.description,
         image: { uri: item.image.uri },
+        author: item.author,
       }));
       setBlogs(formattedBlogs);
     };
@@ -37,7 +39,7 @@ const BlogCardList: React.FC<BlogCardListProps> = ({ testID }) => {
   }, []);
 
   const renderItem = ({ item }: { item: DataItem }) => (
-    <BlogCard title={item.title} description={item.description} image={item.image} />
+    <BlogCard title={item.title} description={item.description} image={item.image} author={item.author} />
   );
 
   return (

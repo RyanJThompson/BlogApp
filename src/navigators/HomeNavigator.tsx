@@ -2,7 +2,9 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { HomeScreen, BlogScreen } from '../screens';
 
 interface RouteParams {
-  name?: string;
+  blogContent: {
+    author: string;
+  };
 }
 
 const Stack = createStackNavigator();
@@ -14,7 +16,7 @@ const HomeScreenNavigator = () => {
       <Stack.Screen
         name="Blog"
         component={BlogScreen}
-        options={({ route }) => ({ title: (route.params as RouteParams)?.name })}
+        options={({ route }) => ({ title: (route.params as RouteParams)?.blogContent.author })}
       />
     </Stack.Navigator>
   );
