@@ -1,1 +1,1 @@
-export { default as BlogCardList } from './BlogCardList';
+export { default as BlogCardList } from './BlogCardList/BlogCardList';

@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react-native';
 import { FlatList, ImageURISource } from 'react-native';
-import BlogCard from '../molecules/BlogCard/BlogCard';
+import { BlogCard } from '../../molecules';
 
 interface DataItem {
   id: number;

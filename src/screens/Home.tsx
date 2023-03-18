@@ -1,6 +1,6 @@
 import { SafeAreaView, StyleSheet } from 'react-native';
 import { CircularButton } from '../components/molecules';
-import BlogCardList from '../components/organisms/BlogCardList';
+import { BlogCardList } from '../components/organisms';
 
 const HomeScreen = (): JSX.Element => {
   return (
