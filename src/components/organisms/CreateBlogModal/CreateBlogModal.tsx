@@ -1,4 +1,5 @@
-import { Modal, Alert, View, Text, TextInput, TouchableOpacity } from 'react-native';
+import { Modal, Alert, View } from 'react-native';
+import { BlogContentInput, BlogSubmitButton, BlogTitleInput } from '../../../components/atoms';
 import createStyles from './CreateBlogModal.styles';
 
 interface CreateBlogModalProps {
@@ -21,11 +22,9 @@ const CreateBlogModal: React.FC<CreateBlogModalProps> = ({ isVisible, toggleModa
         }}>
         <View style={styles.modalBackground}>
           <View style={styles.modalView}>
-            <TextInput style={styles.blogTitleInput} placeholder="Blog Title" />
-            <TextInput style={styles.blogTextInput} multiline={true} numberOfLines={4} placeholder="Blog Content" />
-            <TouchableOpacity style={styles.button} onPress={toggleModal}>
-              <Text style={styles.buttonText}>Add Blog</Text>
-            </TouchableOpacity>
+            <BlogContentInput />
+            <BlogTitleInput />
+            <BlogSubmitButton toggleModal={toggleModal} />
           </View>
         </View>
       </Modal>

@@ -40,25 +40,6 @@ const createStyles = () =>
       paddingVertical: 5,
       marginTop: 15,
     },
-    blogTitleInput: {
-      width: '100%',
-      height: '5%',
-      borderRadius: 4,
-      borderWidth: 1,
-      borderColor: 'gray',
-      marginBottom: 20,
-      marginTop: 5,
-      paddingHorizontal: 5,
-    },
-    blogTextInput: {
-      width: '100%',
-      height: '80%',
-      borderWidth: 1,
-      borderColor: 'gray',
-      borderRadius: 4,
-      textAlignVertical: 'top',
-      paddingHorizontal: 5,
-    },
   });
 
 export default createStyles;

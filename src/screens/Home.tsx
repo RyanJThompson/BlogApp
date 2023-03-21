@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { SafeAreaView, StyleSheet } from 'react-native';
-import { CreateBlogButton } from '../components/molecules';
+import { CreateBlogButton } from '../components/atoms';
 import { BlogCardList, CreateBlogModal } from '../components/organisms';
 
 const HomeScreen = (): JSX.Element => {
