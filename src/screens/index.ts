@@ -1,6 +1,6 @@
-export { default as HomeScreen } from './Home';
-export { default as PopularScreen } from './Popular';
-export { default as LatestScreen } from './Latest';
-export { default as ProfileScreen } from './Profile';
-export { default as SettingsScreen } from './Settings';
-export { default as BlogScreen } from './Blog';
+export { default as HomeScreen } from './HomeScreen';
+export { default as PopularScreen } from './PopularScreen';
+export { default as LatestScreen } from './LatestScreen';
+export { default as ProfileScreen } from './ProfileScreen';
+export { default as SettingsScreen } from './SettingsScreen';
+export { default as BlogScreen } from './BlogScreen';
