@@ -1,12 +1,20 @@
+import { useState } from 'react';
 import { SafeAreaView, StyleSheet } from 'react-native';
-import { CircularButton } from '../components/molecules';
-import { BlogCardList } from '../components/organisms';
+import { CreateBlogButton } from '../components/molecules';
+import { BlogCardList, CreateBlogModal } from '../components/organisms';
 
 const HomeScreen = (): JSX.Element => {
+  const [modalVisible, setModalVisible] = useState(false);
+
+  const toggleModalVisibility = () => {
+    setModalVisible(!modalVisible);
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <BlogCardList />
-      <CircularButton />
+      <CreateBlogButton onPress={toggleModalVisibility} />
+      <CreateBlogModal isVisible={modalVisible} toggleModal={toggleModalVisibility} />
     </SafeAreaView>
   );
 };

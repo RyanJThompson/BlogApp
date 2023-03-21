@@ -8,7 +8,13 @@ describe('Unit - Atoms: BlogCardSubtitleText', () => {
       uri: 'https://test-image.com',
     };
     const { getByTestId, getByText } = render(
-      <BlogCard title={'Mr. Blob'} description={'Mr. Blobs description'} image={image} testID="blog-card" />,
+      <BlogCard
+        title={'Mr. Blob'}
+        description={'Mr. Blobs description'}
+        image={image}
+        author="Ryan Thompson"
+        testID="blog-card"
+      />,
     );
     expect(getByTestId('blog-card')).toBeDefined();
     expect(getByText('Mr. Blob')).toBeDefined();
