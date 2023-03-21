@@ -9,7 +9,7 @@ interface RouteParams {
 
 const Stack = createStackNavigator();
 
-const HomeScreenNavigator = () => {
+const HomeScreenNavigator: React.FC = () => {
   return (
     <Stack.Navigator screenOptions={{ headerShown: true }} initialRouteName="Home">
       <Stack.Screen name="Home" component={HomeScreen} />

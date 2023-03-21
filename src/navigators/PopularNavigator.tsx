@@ -3,7 +3,7 @@ import { PopularScreen } from '../screens';
 
 const Stack = createStackNavigator();
 
-const PopularScreenNavigator = () => {
+const PopularScreenNavigator: React.FC = () => {
   return (
     <Stack.Navigator screenOptions={{ headerShown: true }}>
       <Stack.Screen name="Popular" component={PopularScreen} />

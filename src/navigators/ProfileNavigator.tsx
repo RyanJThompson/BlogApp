@@ -3,7 +3,7 @@ import { ProfileScreen } from '../screens';
 
 const Stack = createStackNavigator();
 
-const ProfileScreenNavigator = () => {
+const ProfileScreenNavigator: React.FC = () => {
   return (
     <Stack.Navigator screenOptions={{ headerShown: true }}>
       <Stack.Screen name="Profile" component={ProfileScreen} />

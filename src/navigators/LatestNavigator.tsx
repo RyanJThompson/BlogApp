@@ -3,7 +3,7 @@ import { LatestScreen } from '../screens';
 
 const Stack = createStackNavigator();
 
-const LatestScreenNavigator = () => {
+const LatestScreenNavigator: React.FC = () => {
   return (
     <Stack.Navigator screenOptions={{ headerShown: true }}>
       <Stack.Screen name="Latest" component={LatestScreen} />

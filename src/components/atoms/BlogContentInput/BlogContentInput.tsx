@@ -3,7 +3,7 @@ import createStyles from './BlogContentInput.styles';
 
 const styles = createStyles();
 
-const CreateBlogContent = () => {
+const CreateBlogContent: React.FC = () => {
   return <TextInput style={styles.blogTextInput} multiline={true} maxLength={1500} placeholder="Blog Content" />;
 };
 
