@@ -1,13 +1,10 @@
 import { Modal, Alert, View } from 'react-native';
-import { BlogContentInput, BlogSubmitButton, BlogTitleInput } from '../../../components/atoms';
-import createStyles from './CreateBlogModal.styles';
+import { CreateBlogModalLayout } from '../../../components/molecules';
 
 interface CreateBlogModalProps {
   isVisible: boolean;
   toggleModal: () => void;
 }
-
-const styles = createStyles();
 
 const CreateBlogModal: React.FC<CreateBlogModalProps> = ({ isVisible, toggleModal }) => {
   return (
@@ -20,13 +17,7 @@ const CreateBlogModal: React.FC<CreateBlogModalProps> = ({ isVisible, toggleModa
           Alert.alert('Modal has been closed.');
           toggleModal();
         }}>
-        <View style={styles.modalBackground}>
-          <View style={styles.modalView}>
-            <BlogContentInput />
-            <BlogTitleInput />
-            <BlogSubmitButton toggleModal={toggleModal} />
-          </View>
-        </View>
+        <CreateBlogModalLayout toggleModal={toggleModal} />
       </Modal>
     </View>
   );
