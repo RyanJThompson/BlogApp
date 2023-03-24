@@ -19,7 +19,7 @@ const BlogContentInput: React.FC<BlogContentInputProps> = ({ onContentChange }) 
     <TextInput
       style={styles.blogTextInput}
       multiline={true}
-      maxLength={1500}
+      maxLength={4000}
       placeholder="Blog Content"
       onChangeText={handleChange}
       defaultValue={contentText}
