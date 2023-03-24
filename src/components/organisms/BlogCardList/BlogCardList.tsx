@@ -21,12 +21,13 @@ const styles = createStyles();
 
 const BlogCardList: React.FC<BlogCardListProps> = ({ testID }) => {
   const [blogs, setBlogs] = useState<DataItem[]>();
-
+  // if a key is missing then an error occurs
   useEffect(() => {
     const getBlogs = async (): Promise<void> => {
-      const snapshot = await firebase.app().database(FIREBASE_DB_URL).ref('/Blogs').once('value');
-      const blogsData: DataItem[] = snapshot.val();
-      const formattedBlogs = blogsData.map((item, index) => ({
+      const blogsSnapshot = await firebase.app().database(FIREBASE_DB_URL).ref('/Blogs').once('value');
+      const blogsData: DataItem[] = blogsSnapshot.val();
+      const nonNullBlogs = blogsData.filter(item => item !== null);
+      const formattedBlogs = nonNullBlogs.map((item, index) => ({
         id: index,
         title: item.title,
         description: item.description,
