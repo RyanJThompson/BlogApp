@@ -4,7 +4,6 @@
  *
  * @format
  */
-
 import NavigationContainer from './navigators/NavigationContainer';
 
 export default function App() {

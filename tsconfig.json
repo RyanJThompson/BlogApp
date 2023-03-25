@@ -1,6 +1,7 @@
 {
   "extends": "@tsconfig/react-native/tsconfig.json",
   "compilerOptions": {
+    "jsx": "react-native",
     "outDir": "./.tsbuild/",
     "sourceMap": false,
     "target": "es2019",
