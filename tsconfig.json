@@ -9,7 +9,8 @@
     "module": "commonjs",
     "removeComments": true,
     "noImplicitAny": true,
-    "strictPropertyInitialization": true,
+    "strict": true,
+    "useUnknownInCatchVariables": false,
     "strictNullChecks": true,
     "types": ["node", "jest"],
     /* Module Resolution Options */
