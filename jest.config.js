@@ -8,6 +8,7 @@ module.exports = {
   setupFiles: [
     './node_modules/react-native-gesture-handler/jestSetup.js',
     './__mocks__/@react-native-firebase/database.ts',
+    './__mocks__/@react-native-firebase/auth.ts',
     './__mocks__/@react-navigation/native.ts',
   ],
   transformIgnorePatterns: ['node_modules/(?!(@react-native|react-native|react-native-vector-icons|native-base)/)'],
