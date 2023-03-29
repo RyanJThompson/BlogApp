@@ -1,6 +1,6 @@
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { View } from 'react-native';
-import { Close } from '../../../assets/icons';
+import { CloseIcon } from '../../../assets/icons';
 import createStyles from './CloseModalButton.styles';
 
 interface CloseModalButtonProps {
@@ -13,7 +13,7 @@ const CloseModalButton: React.FC<CloseModalButtonProps> = ({ toggleModal }) => {
   return (
     <TouchableOpacity onPress={toggleModal}>
       <View style={styles.closeModalButton}>
-        <Close />
+        <CloseIcon />
       </View>
     </TouchableOpacity>
   );

@@ -1,7 +1,7 @@
 import Icon from 'react-native-vector-icons/AntDesign';
 
-const Profile: React.FC = () => {
+const ProfileIcon: React.FC = () => {
   return <Icon name="profile" color="grey" size={24} />;
 };
 
-export default Profile;
+export default ProfileIcon;

@@ -1,7 +1,7 @@
 import Icon from 'react-native-vector-icons/Ionicons';
 
-const Settings: React.FC = () => {
+const SettingsIcon: React.FC = () => {
   return <Icon name="settings" color="grey" size={24} />;
 };
 
-export default Settings;
+export default SettingsIcon;
