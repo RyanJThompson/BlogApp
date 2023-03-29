@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 const createStyles = () =>
   StyleSheet.create({
     blogTitleInput: {
-      width: '100%',
+      width: '90%',
       height: '5%',
       borderRadius: 4,
       borderWidth: 1,
@@ -11,6 +11,7 @@ const createStyles = () =>
       marginBottom: 20,
       marginTop: 5,
       paddingHorizontal: 5,
+      alignSelf: 'center',
     },
   });
 

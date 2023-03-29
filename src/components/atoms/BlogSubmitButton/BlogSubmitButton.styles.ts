@@ -13,6 +13,7 @@ const createStyles = () =>
       paddingHorizontal: 10,
       paddingVertical: 5,
       marginTop: 15,
+      alignSelf: 'center',
     },
   });
 

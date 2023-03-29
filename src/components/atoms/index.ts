@@ -4,3 +4,4 @@ export { default as BlogContentInput } from './BlogContentInput/BlogContentInput
 export { default as BlogTitleInput } from './BlogTitleInput/BlogTitleInput';
 export { default as BlogSubmitButton } from './BlogSubmitButton/BlogSubmitButton';
 export { default as CreateBlogButton } from './CreateBlogButton/CreateBlogButton';
+export { default as CloseModalButton } from './CloseModalButton/CloseModalButton';
