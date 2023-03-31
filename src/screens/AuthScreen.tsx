@@ -2,10 +2,14 @@
 import React, { useState } from 'react';
 import { View, TextInput, Button, Text, StyleSheet } from 'react-native';
 import auth from '@react-native-firebase/auth';
+import { firebase } from '@react-native-firebase/database';
+import { FIREBASE_DB_URL } from '@env';
 
 const AuthScreen: React.FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
   const [isSignUp, setIsSignUp] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
 
@@ -13,6 +17,15 @@ const AuthScreen: React.FC = () => {
     try {
       if (isSignUp) {
         await auth().createUserWithEmailAndPassword(email, password);
+        const submitFullNameToFirebase = async () => {
+          const userKeyFirebase = email.split('.').join('-').toLocaleLowerCase(); // . cannot be used in key
+          const newReference = firebase.app().database(FIREBASE_DB_URL).ref('/Users').child(userKeyFirebase);
+          newReference.set({
+            first_name: firstName,
+            last_name: lastName,
+          });
+        };
+        submitFullNameToFirebase();
       } else {
         await auth().signInWithEmailAndPassword(email, password);
       }
@@ -48,6 +61,24 @@ const AuthScreen: React.FC = () => {
     <View style={styles.container}>
       <Text style={styles.appTitle}>Blog App :P</Text>
       <Text style={styles.errorMsg}>{errorMsg}</Text>
+      {isSignUp && (
+        <View style={styles.nameView}>
+          <TextInput
+            style={styles.nameInput}
+            value={firstName}
+            onChangeText={setFirstName}
+            placeholder="First Name"
+            keyboardType="default"
+          />
+          <TextInput
+            style={styles.nameInput}
+            value={lastName}
+            onChangeText={setLastName}
+            placeholder="Last Name"
+            keyboardType="default"
+          />
+        </View>
+      )}
       <TextInput
         style={styles.input}
         value={email}
@@ -99,6 +130,18 @@ const styles = StyleSheet.create({
     color: 'red',
     padding: 8,
     alignSelf: 'center',
+  },
+  nameView: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  nameInput: {
+    height: 40,
+    borderColor: 'gray',
+    borderWidth: 1,
+    marginBottom: 12,
+    paddingLeft: 8,
+    width: '48%',
   },
 });
 

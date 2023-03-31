@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react';
 import { FlatList, ImageURISource } from 'react-native';
+import { firebaseDBRef } from '../../../api/firebase/realtimeDatabaseConfig';
 import { BlogCard } from '../../molecules';
 import createStyles from './BlogCardList.styles';
-import { FIREBASE_DB_URL } from '@env';
-import { firebase } from '@react-native-firebase/database';
 
 interface DataItem {
   id: number;
@@ -24,7 +23,7 @@ const BlogCardList: React.FC<BlogCardListProps> = ({ testID }) => {
   // if a key is missing then an error occurs
   useEffect(() => {
     const getBlogs = async (): Promise<void> => {
-      const blogsSnapshot = await firebase.app().database(FIREBASE_DB_URL).ref('/Blogs').once('value');
+      const blogsSnapshot = await firebaseDBRef.ref('/Blogs').once('value');
       const blogsData: DataItem[] = blogsSnapshot.val();
       const nonNullBlogs = blogsData.filter(item => item !== null);
       const formattedBlogs = nonNullBlogs.map((item, index) => ({
