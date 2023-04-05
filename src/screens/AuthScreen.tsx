@@ -25,7 +25,7 @@ const AuthScreen: React.FC = () => {
             last_name: lastName,
           });
         };
-        submitFullNameToFirebase();
+        await submitFullNameToFirebase();
       } else {
         await auth().signInWithEmailAndPassword(email, password);
       }
@@ -35,7 +35,6 @@ const AuthScreen: React.FC = () => {
       console.error(error);
     }
   };
-
   const toggleSignUp = () => {
     setIsSignUp(!isSignUp);
   };
