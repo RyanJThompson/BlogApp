@@ -16,7 +16,7 @@ Please message me for the following files to run the app:
 
 FIREBASE_DB_URL=
 
-### Tooling
+## Tooling
 
 - macOS Monterey
 - Homebrew
