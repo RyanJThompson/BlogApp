@@ -1,5 +1,9 @@
-import React, { useEffect, useState } from 'react';
+// BlogCardList.tsx
+import React, { useEffect } from 'react';
 import { FlatList, ImageURISource } from 'react-native';
+import { useSelector, useDispatch } from 'react-redux';
+import { RootState } from '../../../store';
+import { setBlogs } from '../../../store/blog';
 import { firebaseDBRef } from '../../../api/firebase/realtimeDatabaseConfig';
 import { BlogCard } from '../../molecules';
 import createStyles from './BlogCardList.styles';
@@ -19,8 +23,9 @@ interface BlogCardListProps {
 const styles = createStyles();
 
 const BlogCardList: React.FC<BlogCardListProps> = ({ testID }) => {
-  const [blogs, setBlogs] = useState<DataItem[]>();
-  // if a key is missing then an error occurs
+  const dispatch = useDispatch();
+  const blogs = useSelector((state: RootState) => state.blog);
+
   useEffect(() => {
     const getBlogs = async (): Promise<void> => {
       const blogsSnapshot = await firebaseDBRef.ref('/Blogs').once('value');
@@ -33,10 +38,10 @@ const BlogCardList: React.FC<BlogCardListProps> = ({ testID }) => {
         image: { uri: item.image.uri },
         author: item.author,
       }));
-      setBlogs(formattedBlogs);
+      dispatch(setBlogs(formattedBlogs));
     };
     getBlogs();
-  }, []);
+  }, [dispatch]);
 
   const renderItem = ({ item }: { item: DataItem }) => (
     <BlogCard title={item.title} description={item.description} image={item.image} author={item.author} />
