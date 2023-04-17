@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FlatList, ImageURISource } from 'react-native';
 import { firebaseDBRef } from '../../../api/firebase/realtimeDatabaseConfig';
 import { BlogCard } from '../../molecules';

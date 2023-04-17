@@ -1,5 +1,6 @@
 import { createStackNavigator } from '@react-navigation/stack';
 import { HomeScreen, BlogScreen } from '../screens';
+import React from 'react';
 
 interface RouteParams {
   blogContent: {

@@ -1,5 +1,6 @@
 import { createStackNavigator } from '@react-navigation/stack';
 import { LatestScreen } from '../screens';
+import React from 'react';
 
 const Stack = createStackNavigator();
 
