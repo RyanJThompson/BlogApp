@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import { FlatList, ImageURISource } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../../store';
-import { setBlogs } from '../../../store/blog';
+import { storeBlogs } from '../../../store/blog';
 import { firebaseDBRef } from '../../../api/firebase/realtimeDatabaseConfig';
 import { BlogCard } from '../../molecules';
 import createStyles from './BlogCardList.styles';
@@ -38,7 +38,7 @@ const BlogCardList: React.FC<BlogCardListProps> = ({ testID }) => {
         image: { uri: item.image.uri },
         author: item.author,
       }));
-      dispatch(setBlogs(formattedBlogs));
+      dispatch(storeBlogs(formattedBlogs));
     };
     getBlogs();
   }, [dispatch]);

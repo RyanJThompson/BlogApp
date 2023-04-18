@@ -17,12 +17,11 @@ const blogSlice = createSlice({
   name: 'blog',
   initialState,
   reducers: {
-    setBlogs: (state: Draft<DataItem[]>, action: PayloadAction<DataItem[]>) => {
+    storeBlogs: (state: Draft<DataItem[]>, action: PayloadAction<DataItem[]>) => {
       return action.payload;
     },
   },
 });
 
-export const { setBlogs } = blogSlice.actions;
-export type BlogState = DataItem[];
+export const { storeBlogs } = blogSlice.actions;
 export default blogSlice.reducer;

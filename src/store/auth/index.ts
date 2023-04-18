@@ -1,0 +1,1 @@
+export { storeEmail } from './authSlice';

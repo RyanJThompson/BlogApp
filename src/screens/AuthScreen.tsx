@@ -4,6 +4,8 @@ import { View, TextInput, Button, Text, StyleSheet } from 'react-native';
 import auth from '@react-native-firebase/auth';
 import { firebase } from '@react-native-firebase/database';
 import { FIREBASE_DB_URL } from '@env';
+import { useDispatch } from 'react-redux';
+import { storeEmail } from '../store/auth';
 
 const AuthScreen: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -12,6 +14,7 @@ const AuthScreen: React.FC = () => {
   const [lastName, setLastName] = useState('');
   const [isSignUp, setIsSignUp] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
+  const dispatch = useDispatch();
 
   const handleSubmit = async () => {
     try {
@@ -29,6 +32,10 @@ const AuthScreen: React.FC = () => {
       } else {
         await auth().signInWithEmailAndPassword(email, password);
       }
+      const formatEmailData = {
+        email: email,
+      };
+      dispatch(storeEmail(formatEmailData));
     } catch (error) {
       setErrorMsg(getErrorMsg(error));
       console.log(getErrorMsg(error));

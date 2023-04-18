@@ -1,1 +1,1 @@
-export { setBlogs } from './blogSlice';
+export { storeBlogs } from './blogSlice';
