@@ -6,7 +6,7 @@ A blog app built with react native, I am learning as I develop the app. The end 
 
 I feel this is a great idea for a learn as you go app and there is a lot of base functionailty to cover and it can be built up slowly. E.g. starting off with hardcoded json to represent a database and then after creating a back-end to store blogs and account data once most UI components have been created.
 
-Please message me for the following files to run the app:
+Please send an email to ryanthompson139@gmail.com for the following files to run the app:
 - `.env` within root
 - `GoogleService-Info.plist` within `./ios`
 - `google-services.json` within `./android/app`
